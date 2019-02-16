@@ -1,0 +1,3 @@
+# freeciv-scripts
+
+freeciv scripts
