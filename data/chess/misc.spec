@@ -1,6 +1,6 @@
 
 [spec]
-options = "+Freeciv-2.3-spec"
+options = "+Freeciv-2.6-spec"
 
 [info]
 artists = "Xin Yu"
@@ -69,16 +69,19 @@ tiles = { "row", "column", "tag"
 5,  5, "upkeep.unhappy2"
 5,  6, "upkeep.shield"
 5,  7, "unit.lowfuel", "unit.tired"
+3,  12,"path.waypoint"
 5,  8, "unit.loaded"
 
 4,  9, "unit.stack"
 4, 10, "unit.auto_attack", "unit.auto_settler"
 4, 11, "unit.connect"
 4, 12, "unit.auto_explore"
+3,  0, "unit.convert"
 3,  0, "unit.transform"
 3,  1, "unit.sentry"
 3,  2, "unit.goto"
-3,  3, "unit.mine"
+;;3,  3, "unit.mine"
+3,  3, "unit.plant"
 3,  4, "unit.pollution"
 3,  5, "unit.road"
 3,  6, "unit.irrigate"

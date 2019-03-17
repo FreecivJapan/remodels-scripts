@@ -1,6 +1,6 @@
 
 [spec]
-options = "+Freeciv-2.3-spec"
+options = "+Freeciv-2.6-spec"
 
 [info]
 artists = "Xin Yu"
@@ -29,31 +29,34 @@ tiles = { "row", "column", "tag"
 2,  1, "t.l0.hills1"
 2,  2, "t.l0.hills2"
 2,  3, "t.l0.hills3"
+0,  4, "t.l0.mountains1"
+
 2,  4, "t.l0.swamp1"
 2,  5, "t.l0.swamp2"
 2,  6, "t.l0.swamp3"
 2,  7, "t.l0.swamp4"
 
-4,  0, "t.t_river_n0e0s0w0", "tx.s_river_n0e0s0w0"
-4,  1, "t.t_river_n1e0s0w0", "tx.s_river_n1e0s0w0"
-4,  2, "t.t_river_n0e1s0w0", "tx.s_river_n0e1s0w0"
-4,  3, "t.t_river_n1e1s0w0", "tx.s_river_n1e1s0w0"
-4,  4, "t.t_river_n0e0s1w0", "tx.s_river_n0e0s1w0"
-4,  5, "t.t_river_n1e0s1w0", "tx.s_river_n1e0s1w0"
-4,  6, "t.t_river_n0e1s1w0", "tx.s_river_n0e1s1w0"
-4,  7, "t.t_river_n1e1s1w0", "tx.s_river_n1e1s1w0"
-5,  0, "t.t_river_n0e0s0w1", "tx.s_river_n0e0s0w1"
-5,  1, "t.t_river_n1e0s0w1", "tx.s_river_n1e0s0w1"
-5,  2, "t.t_river_n0e1s0w1", "tx.s_river_n0e1s0w1"
-5,  3, "t.t_river_n1e1s0w1", "tx.s_river_n1e1s0w1"
-5,  4, "t.t_river_n0e0s1w1", "tx.s_river_n0e0s1w1"
-5,  5, "t.t_river_n1e0s1w1", "tx.s_river_n1e0s1w1"
-5,  6, "t.t_river_n0e1s1w1", "tx.s_river_n0e1s1w1"
-5,  7, "t.t_river_n1e1s1w1", "tx.s_river_n1e1s1w1"
-3,  4, "tx.river_outlet_n" 
-3,  5, "tx.river_outlet_w"
-3,  6, "tx.river_outlet_s"
-3,  7, "tx.river_outlet_e"
+4,  0, "road.river_s_n0e0s0w0", "tx.s_n0e0s0w0"
+4,  1, "road.river_s_n1e0s0w0", "tx.s_n1e0s0w0"
+4,  2, "road.river_s_n0e1s0w0", "tx.s_n0e1s0w0"
+4,  3, "road.river_s_n1e1s0w0", "tx.s_n1e1s0w0"
+4,  4, "road.river_s_n0e0s1w0", "tx.s_n0e0s1w0"
+4,  5, "road.river_s_n1e0s1w0", "tx.s_n1e0s1w0"
+4,  6, "road.river_s_n0e1s1w0", "tx.s_n0e1s1w0"
+4,  7, "road.river_s_n1e1s1w0", "tx.s_n1e1s1w0"
+5,  0, "road.river_s_n0e0s0w1", "tx.s_n0e0s0w1"
+5,  1, "road.river_s_n1e0s0w1", "tx.s_n1e0s0w1"
+5,  2, "road.river_s_n0e1s0w1", "tx.s_n0e1s0w1"
+5,  3, "road.river_s_n1e1s0w1", "tx.s_n1e1s0w1"
+5,  4, "road.river_s_n0e0s1w1", "tx.s_n0e0s1w1"
+5,  5, "road.river_s_n1e0s1w1", "tx.s_n1e0s1w1"
+5,  6, "road.river_s_n0e1s1w1", "tx.s_n0e1s1w1"
+5,  7, "road.river_s_n1e1s1w1", "tx.s_n1e1s1w1"
+
+3,  4, "road.river_outlet_n" 
+3,  5, "road.river_outlet_w"
+3,  6, "road.river_outlet_s"
+3,  7, "road.river_outlet_e"
 
 6,  0, "t.l0.coast1"
 
@@ -113,9 +116,22 @@ tiles = { "row", "column", "tag"
 11,  6, "t.l2.floor_n1e0s0w0"
 11,  7, "t.l2.floor_n0e0s0w0"
 
-0,  4, "t.l0.mountains_n0e0s0w0", "t.l0.mountains_n0e0s1w0", "t.l0.mountains_n1e0s0w0", "t.l0.mountains_n1e0s1w0"
-0,  5, "t.l0.mountains_n0e1s0w0", "t.l0.mountains_n0e1s1w0", "t.l0.mountains_n1e1s0w0", "t.l0.mountains_n1e1s1w0"
-0,  6, "t.l0.mountains_n0e1s0w1", "t.l0.mountains_n0e1s1w1", "t.l0.mountains_n1e1s0w1", "t.l0.mountains_n1e1s1w1"
-0,  7, "t.l0.mountains_n0e0s0w1", "t.l0.mountains_n0e0s1w1", "t.l0.mountains_n1e0s0w1", "t.l0.mountains_n1e0s1w1"
+0, 4, "t.l0.mountains_n0e0s0w0",  ; not-mountains E and W
+      "t.l0.mountains_n0e0s1w0", 
+      "t.l0.mountains_n1e0s0w0", 
+      "t.l0.mountains_n1e0s1w0" 
+0, 5, "t.l0.mountains_n0e1s0w0",  ; mountains E
+      "t.l0.mountains_n0e1s1w0", 
+      "t.l0.mountains_n1e1s0w0", 
+      "t.l0.mountains_n1e1s1w0" 
+0, 6, "t.l0.mountains_n0e1s0w1",  ; mountains E and W
+      "t.l0.mountains_n0e1s1w1", 
+      "t.l0.mountains_n1e1s0w1", 
+      "t.l0.mountains_n1e1s1w1" 
+0, 7, "t.l0.mountains_n0e0s0w1",  ; mountains W
+      "t.l0.mountains_n0e0s1w1", 
+      "t.l0.mountains_n1e0s0w1", 
+      "t.l0.mountains_n1e0s1w1" 
+
 }
 

@@ -1,5 +1,5 @@
 [spec]
-options = "+Freeciv-2.3-spec"
+options = "+Freeciv-2.6-spec"
 
 [info]
 artists = "Xin Yu"
