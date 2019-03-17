@@ -7,30 +7,19 @@ normal_tile_width  = 60
 normal_tile_height = 60
 small_tile_width   = 16
 small_tile_height  = 20
-
-;normal_tile_width  = 30
-;normal_tile_height = 30
-;small_tile_width   = 15
-;small_tile_height  = 20
-
-
 type = "overhead"
 is_hex = FALSE
 
-;is_mountainous = 0
-;is_full_citybar = 1
-;roadstyle = 0
-
+is_mountainous = 0
+is_full_citybar = 0
 fog_style = "Auto"
 darkness_style = "Corner"
 darkness_layer = 0
 
-
-unit_flag_offset_x = 0
-unit_flag_offset_y = 0
+unit_flag_offset_x = 5
+unit_flag_offset_y = 5
 city_flag_offset_x = 0
 city_flag_offset_y = 0
-
 occupied_offset_x = 0
 occupied_offset_y = 0
 unit_offset_x = 0
@@ -39,10 +28,8 @@ activity_offset_x = 0
 activity_offset_y = 0
 city_offset_x = 0
 city_offset_y = 0
-citybar_offset_y = 27
+citybar_offset_y = 42
 tilelabel_offset_y = 10
-;unit_upkeep_offset_y = 0
-
 
 unit_upkeep_small_offset_y = 20
 city_names_font_size = 10
@@ -50,6 +37,7 @@ city_productions_font_size = 10
 
 main_intro_file    = "misc/intro"
 minimap_intro_file = "misc/radar"
+
 
 files =
   "chess/terrain.spec",
@@ -73,17 +61,11 @@ files =
   "misc/treaty.spec",
   "misc/icons.spec",
   "misc/editor.spec",
-
   "misc/events.spec",
   "misc/governments.spec",
   "misc/specialists.spec"
 
-
-
-;;*include "chess/colors.tilespec"
-
 *include "misc/colors.tilespec"
-
 
 
 [layer0]
@@ -126,40 +108,34 @@ layer1_match_with = "water"
 tag = "arctic"
 blend_layer = 0
 num_layers = 1
-layer0_match_type = "lake"
 mine_sprite = "tx.mine"
 
 [tile_desert]
 tag = "desert"
 blend_layer = 0
 num_layers = 1
-layer0_match_type = "lake"
 mine_sprite = "tx.mine"
 
 [tile_forest]
 tag = "forest"
 blend_layer = 0
 num_layers = 1
-layer0_match_type = "land"
 
 [tile_grassland]
 tag = "grassland"
 blend_layer = 0
 num_layers = 1
-layer0_match_type = "land"
 
 [tile_hills]
 tag = "hills"
 blend_layer = 0
 num_layers = 1
-layer0_match_type = "land"
 mine_sprite = "tx.mine"
 
 [tile_jungle]
 tag = "jungle"
 blend_layer = 0
 num_layers = 1
-layer0_match_type = "land"
 
 [tile_mountains]
 tag = "mountains"
@@ -182,21 +158,16 @@ layer2_match_with = "water"
 tag = "plains"
 blend_layer = 0
 num_layers = 1
-layer0_match_type = "land"
 
 [tile_swamp]
 tag = "swamp"
 blend_layer = 0
 num_layers = 1
-layer0_match_type = "land"
 
 [tile_tundra]
 tag = "tundra"
 blend_layer = 0
 num_layers = 1
-layer0_match_type = "land"
-
-
 
 
 [extras]
