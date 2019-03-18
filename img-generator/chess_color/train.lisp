@@ -6,15 +6,15 @@
 (defmacro sdl-idle-frame-work (&rest idle-body)
   `(sdl:with-init ()
     (sdl:window 300 300)
-    (setf (sdl:frame-rate) 30)g
+    (setf (sdl:frame-rate) 30)
     (sdl:update-display)
 
     (sdl:with-events ()
       (:quit-event () t)
       (:idle ()
-       (sdl:update-display)
        (sdl:clear-display sdl:*black*)
        ,@idle-body
+       ;; (print (format nil "~,4F" (sdl:average-fps)))
        (sdl:update-display)
        ))))
 
@@ -46,35 +46,42 @@
 
 
 (defun calc-selecter (period now radius num-satellite)
-  period now
-  (let ((center radius))
-    ;; [point] ::  [(p1 p2 p3)] :: [[(center P- P+)]] :: [[[(x,y)]]]
+  
+  (let ((center radius)
+        (fill-gap-ratio 4)  ;; 2 => 1:1
+        )
+    
     (loop for i from 1 to num-satellite
+          ;; [point] ::  [(p1 p2 p3)] :: [[(center P- P+)]] :: [[[(x,y)]]]
           collect
              (make-point-list
               (list center center)
               (list (+ center
                        (* radius
-                          (sin (- (* (/ i num-satellite) 2 pi)
-                                  (* (/ 1 num-satellite 2 2) 2 pi)
-                                  ))))
+                          (sin (* 2 pi
+                                  (+ (/ i num-satellite)
+                                     (/ -1 num-satellite 2 fill-gap-ratio)
+                                     (/ now num-satellite 2 fill-gap-ratio period))))))
                     (+ center
                        (* radius
-                          (cos (- (* (/ i num-satellite) 2 pi)
-                                  (* (/ 1 num-satellite 2 2) 2 pi)
-                                  )))))
+                          (cos (* 2 pi
+                                  (+ (/ i num-satellite)
+                                     (/ -1 num-satellite 2 fill-gap-ratio)
+                                     (/ now num-satellite 2 fill-gap-ratio period)))))))
               (list (+ center
                        (* radius
-                          (sin (+ (* (/ i num-satellite) 2 pi)
-                                  (* (/ 1 num-satellite 2 2) 2 pi)
-                                  ))))
+                          (sin (* 2 pi
+                                  (+ (/ i num-satellite)
+                                     (/ 1 num-satellite 2 fill-gap-ratio)
+                                     (/ now num-satellite 2 fill-gap-ratio period))))))
+                               
                     (+ center
                        (* radius
-                          (cos (+ (* (/ i num-satellite) 2 pi)
-                                  (* (/ 1 num-satellite 2 2) 2 pi)
-                                  ))))))
-          
-          )))
+                          (cos (* 2 pi
+                                  (+ (/ i num-satellite)
+                                     (/ 1 num-satellite 2 fill-gap-ratio)
+                                     (/ now num-satellite 2 fill-gap-ratio period)))))))
+              ))))
 
 
 
@@ -85,7 +92,7 @@
          (current-frame 0)
          (cell-pixel-length 60)
          (center (truncate (/ cell-pixel-length 2)))
-         (satellite 8))
+         (satellite 3))
     num-frame cell-pixel-length satellite
     (sdl-idle-frame-work
 
@@ -98,14 +105,21 @@
                            (sdl:point :x (p-x (p3 three-point))
                                       :y (p-y (p3 three-point)))
                            :color sdl:*white*))
-      (calc-selecter 4 1 center satellite))
-     )
-    (incf current-frame)
-    (print current-frame)
+                                                       
+      (append (calc-selecter 3 (- current-frame) center satellite)
+              (calc-selecter 3 (+ current-frame) center satellite)))
+     
+     (incf current-frame)
+     (print current-frame)
 
-    ;;(sdl:draw-filled-circle-* center center (- center 9)
-        ;:color (sdl:color :r 0 :g 0 :b 0))
+     ;;(sdl:draw-filled-circle-* center center (- center 9)
+     ;;:color (sdl:color :r 0 :g 0 :b 0))
+     )
+
+
+
      ))
+
 
 (select-img)
 
