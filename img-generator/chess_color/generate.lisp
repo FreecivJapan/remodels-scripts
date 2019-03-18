@@ -26,3 +26,4 @@
 
 (save-svg-image "test2.svg" #'img-1)
 
+
