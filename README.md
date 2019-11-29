@@ -4,15 +4,10 @@ freeciv scripts
 
 
 
-# data
+# data/
 
 ### install
-- data directory of source code(https://github.com/freeciv/freeciv) will be placed to `/usr/local/share/freeciv` after installed.
-- to above where, make symlink by `sudo ln -s ~/where_is/freeciv-scripts/cloned/data/dir_or_file-name dir_or_file-name` , or copy file to install things of data.
+- data directory of Freeciv source code(https://github.com/freeciv/freeciv) are maybe be placed into `/usr/local/share/freeciv/` (leted to above-where) after installed in linux.
+- to install things of `data/` of `freeciv-scripts` , to above-where, make symlink by `$ sudo ln -s {where-is/directory-of/cloned/freeciv-scripts/data}/dir_or_file /above-where` or `$ cp ...`
 
 
-# copyright
-- `data/chess/` and `data/chess.tilespec` are modification of chess freeciv-tileset under GPL. please read `data/chess/chess.README` for more details.
-- also, We publish other files under MIL.
-
-    
