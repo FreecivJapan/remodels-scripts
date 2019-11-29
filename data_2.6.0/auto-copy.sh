@@ -2,7 +2,7 @@
 
 
 # files or directories to copy
-TO_COPY=(akasaba akasaba.serv teiki teiki.serv newteiki)
+TO_COPY=(akasaba akasaba.serv teiki teiki.serv newteiki newteiki.serv)
 
 
 # Freeciv's data directory of Linux
