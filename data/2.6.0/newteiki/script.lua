@@ -98,7 +98,6 @@ end
 signal.connect("map_generated", "place_map_labels")
 
 
-
 -- "IF you need it, I would be glad to do it"
 
 function alien_coming(building_type, city) 
@@ -106,12 +105,11 @@ function alien_coming(building_type, city)
   if not (building_type:rule_name() == "SETI Program")then
     return false
   end
-
   local units_name ="UFO"
-
   edit.create_unit(city.owner, city.tile,
                    find.unit_type(units_name), 0, nil, -1)
 
 end
 
 signal.connect("building_built", "alien_coming")
+

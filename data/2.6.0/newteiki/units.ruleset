@@ -1376,7 +1376,7 @@ name          = _("UFO")
 class         = "Helicopter"
 tech_req      = "Combined Arms"
 obsolete_by   = "None"
-graphic       = "u.ufo"
+graphic       = "u.stealth_bomber"
 graphic_alt   = "-"
 sound_move    = "m_helicopter"
 sound_move_alt = "m_generic"
@@ -1385,10 +1385,10 @@ sound_fight_alt = "f_generic"
 build_cost    = 100
 pop_cost      = 0
 attack        = 0
-defense       = 120
-hitpoints     = 1
-firepower     = 50
-move_rate     = 24
+defense       = 12
+hitpoints     = 40
+firepower     = 1
+move_rate     = 36
 vision_radius_sq = 8
 transport_cap = 0
 fuel          = 0
@@ -1396,7 +1396,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
-flags         = "FieldUnit", "OneAttack", "Helicopter", "AirAttacker", "IgZOC",  "NoBuild", "NoHome", "Undisbandable", "Unbribable", "Unique"
+flags         = "FieldUnit", "IgZOC",  "NoBuild", "NoHome", "Undisbandable", "Unbribable", "Unique", "SuperSpy"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("green")
 veteran_raise_chance = 0
@@ -1405,11 +1405,6 @@ veteran_power_fact = 100
 veteran_move_bonus = 0
 roles         = ""
 helptext      = _("\
-The Helicopter is a very powerful unit, as it can both fly and\
- conquer cities.  Care must be exercised, because Helicopters lose a\
- small amount of health for every turn not spent in a city or airbase\
- or on a Carrier, unless you have the United Nations wonder, and\
- Helicopters may be attacked by ground units.\
 ")
 
 [unit_stealth_fighter]
@@ -2226,7 +2221,7 @@ attack        = 0
 defense       = 0
 hitpoints     = 10
 firepower     = 1
-move_rate     = 50
+move_rate     = 60
 vision_radius_sq = 0
 transport_cap = 0
 fuel          = 0

@@ -604,7 +604,7 @@ identifier           = "j"
 class                = "Land"
 movement_cost        = 2
 defense_bonus        = 50
-food                 = 1
+food                 = 2
 shield               = 0
 trade                = 0
 resources            = "Gems", "Fruit"
@@ -897,7 +897,7 @@ name        = _("Fruit")
 graphic     = "ts.fruit"
 graphic_alt = "-"
 identifier  = "f"
-food        = 3
+food        = 2
 trade       = 1
 # jungle.
 

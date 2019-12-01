@@ -2078,7 +2078,7 @@ reqs	=
 
 [effect_seti_program]
 type    = "Output_Bonus"
-value	= 100
+value	= 200
 reqs	=
     { "type", "name", "range"
       "Building", "Research Lab", "City"
