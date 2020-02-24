@@ -14,7 +14,7 @@ BASE_DIR=$(dirname "$0")
 
 
 
-# make symlinks
+# make copies
 
 for file in ${TO_COPY[@]}
 do

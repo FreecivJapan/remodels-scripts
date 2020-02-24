@@ -1,0 +1,8 @@
+/cmdlevel ctrl first
+/cmdlevel basic new
+/metamessage makisabaの公開鯖です。
+/set autosave INTERRUPT|TURN|GAMEOVER|QUITIDLE
+/set saveturns 10
+/set savename makisaba
+/set scorelog enabled
+/set scorefile Score.log
